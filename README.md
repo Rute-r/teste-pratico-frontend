@@ -1,54 +1,73 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Teste Técnico FrontEnd - BeTalent
 
-Currently, two official plugins are available:
+Este projeto foi desenvolvido para o teste técnico de front-end da **BeTalent**. Ele consiste em uma aplicação que exibe uma tabela de dados, com funcionalidades de pesquisa e formatação de datas e telefones, utilizando **React.js**, **TypeScript** e outras tecnologias.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Pré-requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Antes de rodar a aplicação, certifique-se de ter as seguintes ferramentas instaladas em seu computador:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+ - [Node.js](https://nodejs.org/pt)
+ - [npm](https://www.npmjs.com/)
+ - [json-server](https://github.com/typicode/json-server)
+- [Axios](https://axios-http.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+
+## Instalação
+**1 -** Clone o repositório
+
+Primeiramente, clone o repositório para sua máquina:
+```bash
+  git clone https://github.com/Rute-r/teste-pratico-frontend.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**2 -** Instale as dependências
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+Navegue até o diretório do projeto e instale as dependências necessárias:
+```bash
+  cd teste-pratico-frontend
+  npm install
+  ou
+  yarn
 ```
+
+**3 -** Inicie o json-server
+
+Para simular uma API, você precisará rodar o json-server:
+```bash
+ json-server --watch db.json
+```
+**4 -** Inicie o servidor de desenvolvimento
+
+Após ter configurado o json-server, inicie o servidor da aplicação React com TypeScript:
+```bash
+ npm start
+ ou 
+ yarn dev
+```
+Isso abrirá a aplicação no seu navegador em http://localhost:3000.
+    
+## Funcionalidades
+
+- Exibição de uma tabela de dados.
+- Pesquisa filtrada nos dados da tabela.
+- Formatação de datas e números de telefone.
+- Responsividade com o uso de Tailwind CSS.
+
+
+## Tecnologias Usadas
+
+- **React.js** - Biblioteca para construção da interface de usuário.
+- **TypeScript** - Superset do JavaScript que adiciona tipagem estática.
+- **Axios** - Biblioteca para requisições HTTP.
+- **Tailwind CSS** - Framework para estilização.
+- **json-server** - Simulação de uma API REST.
+
+
+## Instruções Adicionais
+
+- **Pesquisa na tabela:** A aplicação permite buscar registros na tabela filtrando pelo nome dos dados.
+- **Formatação:** As colunas de datas e números de telefone são automaticamente formatadas de acordo com o padrão brasileiro.
+
